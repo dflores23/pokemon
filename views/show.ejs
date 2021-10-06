@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1><%=data.name %></h1>
+<img src="<%=data.img%>" alt="">
+<p><h3>Type :</h3><%=data.type%></p>
+
+<p><h3>Attack</h3><%=data.stats.attack%></p>
+<p><h3>Defense</h3> <%=data.stats.defense%></p>
+<p><h3>Speed</h3> <%=data.stats.speed%></p>
+<p><h3>Male</h3> <%=data.misc.sex.male%></p>
+<p><h3>Female</h3> <%=data.misc.sex.female%></p>
+<a href="edit"><button>edit</button></a>
+</body>
+</html>
