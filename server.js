@@ -16,23 +16,24 @@ app.use(express.json());
 
 // GET all pokemon
 app.get('/', (req, res) => {
-    res.render('index', {data: Pokemon});
+    res.render('index', {data: pokemon});
 });
+
 // GET pokemon form to enter new pokemon data
 app.get('/new', (req, res) => {
     res.render('new');
 });
 // GET pokemon form to edit pokemon data
 app.get('/:id/edit', (req, res) => {
-    let Pokemon = pokemon.find(poke => {
-        return poke.id === req.params.id;
+    let data = pokemon.find(pokemon => {
+        return pokemon.id === req.params.id;
     })
 
     res.render('edit', {data: Pokemon});
 });
+
 // GET pokemon by id
 app.get('/:id', (req, res) => {
-    console.log('this route works');
     let Pokemon = pokemon.find(pokemon => {
         return pokemon.id === req.params.id;
     })
@@ -50,7 +51,6 @@ app.post('/', (req, res) => {
 });
 // PUT update pokemon data by id
 app.put("/:id", (req, res) => {
-    console.log(req.body);
     let Pokemon = pokemon.find(pokemon => {
         return pokemon.id === req.params.id;
     })
@@ -66,7 +66,6 @@ app.put("/:id", (req, res) => {
 });
 // DELETE delete pokemon by id
 app.delete('/:id', (req, res) => {
-    console.log(req.body);
     let Pokemon = pokemon.find(pokemon => {
         return pokemon.id === req.params.id;
     })
